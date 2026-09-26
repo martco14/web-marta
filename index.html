@@ -1,1 +1,493 @@
-pagina fea con ganas de marta
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#302019">
+	<meta name="description" content="Marta Cortés, estudiante de máster en Data Science y graduada en Gestión de la Información y Contenidos Digitales.">
+	<title>Marta Cortés | Data Science</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			color-scheme: light;
+			--cocoa: #302019;
+			--cocoa-soft: #493126;
+			--cream: #f3eee6;
+			--paper: #fbf9f5;
+			--clay: #bd7553;
+			--olive: #727456;
+			--muted: #75685e;
+			--line: #d9cfc3;
+			--serif: "DM Serif Display", Georgia, serif;
+			--sans: "Manrope", "Segoe UI", sans-serif;
+		}
+
+		* { box-sizing: border-box; }
+
+		html { scroll-behavior: smooth; }
+
+		body {
+			margin: 0;
+			background: var(--paper);
+			color: var(--cocoa);
+			font-family: var(--sans);
+			-webkit-font-smoothing: antialiased;
+		}
+
+		a { color: inherit; }
+
+		a:focus-visible {
+			outline: 2px solid var(--clay);
+			outline-offset: 5px;
+		}
+
+		.hero {
+			min-height: 650px;
+			overflow: hidden;
+			background-color: var(--cocoa);
+			background-image: linear-gradient(115deg, rgba(48, 32, 25, .98) 45%, rgba(72, 47, 34, .9)),
+				repeating-linear-gradient(0deg, transparent 0 39px, rgba(243, 238, 230, .035) 40px),
+				repeating-linear-gradient(90deg, transparent 0 39px, rgba(243, 238, 230, .035) 40px);
+			color: var(--cream);
+		}
+
+		.topbar, .hero-inner, .section-inner, .footer-inner {
+			width: min(1120px, calc(100% - 64px));
+			margin-inline: auto;
+		}
+
+		.topbar {
+			min-height: 90px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px solid rgba(243, 238, 230, .18);
+		}
+
+		.wordmark {
+			font-family: var(--serif);
+			font-size: 22px;
+			text-decoration: none;
+		}
+
+		.wordmark span { color: #d7a27e; }
+
+		.nav {
+			display: flex;
+			align-items: center;
+			gap: 34px;
+			font-size: 12px;
+			letter-spacing: .04em;
+		}
+
+		.nav a {
+			color: rgba(243, 238, 230, .78);
+			text-decoration: none;
+			transition: color .2s ease;
+		}
+
+		.nav a:hover { color: #e2ad88; }
+
+		.hero-inner {
+			min-height: 560px;
+			display: grid;
+			grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+			align-items: center;
+			gap: 72px;
+			padding-block: 72px 84px;
+		}
+
+		.eyebrow, .section-index, .micro-label {
+			margin: 0;
+			color: #d7a27e;
+			font-size: 10px;
+			font-weight: 700;
+			letter-spacing: .17em;
+			text-transform: uppercase;
+		}
+
+		h1 {
+			max-width: 670px;
+			margin: 21px 0 23px;
+			font-family: var(--serif);
+			font-size: clamp(48px, 6vw, 76px);
+			font-weight: 400;
+			line-height: 1.04;
+		}
+
+		h1 em { color: #d7a27e; font-weight: 400; }
+
+		.intro {
+			max-width: 540px;
+			margin: 0;
+			color: rgba(243, 238, 230, .78);
+			font-size: 15px;
+			line-height: 1.9;
+		}
+
+		.hero-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 13px;
+			margin-top: 31px;
+			color: var(--cream);
+			font-size: 12px;
+			font-weight: 700;
+			text-decoration: none;
+		}
+
+		.hero-link span {
+			display: grid;
+			width: 34px;
+			aspect-ratio: 1;
+			place-items: center;
+			border: 1px solid rgba(243, 238, 230, .4);
+			border-radius: 50%;
+			color: #e2ad88;
+			font-size: 16px;
+			transition: transform .2s ease;
+		}
+
+		.hero-link:hover span { transform: translateY(3px); }
+
+		.origin {
+			position: relative;
+			min-height: 330px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 25px;
+			border: 1px solid rgba(243, 238, 230, .24);
+			background: rgba(243, 238, 230, .045);
+		}
+
+		.origin::before, .origin::after {
+			position: absolute;
+			content: "";
+			pointer-events: none;
+		}
+
+		.origin::before {
+			inset: 50px 24px 89px;
+			background: repeating-linear-gradient(0deg, transparent 0 39px, rgba(243, 238, 230, .09) 40px),
+				repeating-linear-gradient(90deg, transparent 0 39px, rgba(243, 238, 230, .09) 40px);
+		}
+
+		.origin::after {
+			top: 37%;
+			left: 18%;
+			width: 64%;
+			height: 1px;
+			background: var(--clay);
+			box-shadow: 40px 31px 0 rgba(215, 162, 126, .75), 93px -26px 0 rgba(215, 162, 126, .6), 142px 45px 0 rgba(215, 162, 126, .55);
+			transform: rotate(-17deg);
+			transform-origin: left;
+		}
+
+		.origin-top, .origin-bottom { position: relative; z-index: 1; }
+
+		.origin .micro-label { color: rgba(243, 238, 230, .62); }
+
+		.origin h2 {
+			margin: 0;
+			font-family: var(--serif);
+			font-size: 38px;
+			font-weight: 400;
+			line-height: 1.1;
+		}
+
+		.origin-bottom {
+			display: flex;
+			justify-content: space-between;
+			align-items: end;
+			gap: 12px;
+		}
+
+		.origin-bottom p { margin: 0; }
+
+		.origin-place {
+			color: var(--cream);
+			font-size: 12px;
+			font-weight: 700;
+		}
+
+		.origin-region {
+			margin-top: 5px !important;
+			color: rgba(243, 238, 230, .6);
+			font-size: 10px;
+		}
+
+		.origin-number {
+			color: #d7a27e;
+			font-family: var(--serif);
+			font-size: 29px;
+		}
+
+		.section { padding: 104px 0; }
+
+		.about { background: var(--paper); }
+
+		.section-grid {
+			display: grid;
+			grid-template-columns: 210px minmax(0, 1fr);
+			gap: 70px;
+		}
+
+		.section-index { color: var(--clay); }
+
+		.section-label {
+			margin: 11px 0 0;
+			color: var(--muted);
+			font-size: 12px;
+		}
+
+		.section h2 {
+			margin: 0 0 24px;
+			font-family: var(--serif);
+			font-size: 42px;
+			font-weight: 400;
+			line-height: 1.16;
+		}
+
+		.about-copy {
+			max-width: 730px;
+			margin: 0;
+			color: #64574d;
+			font-size: 15px;
+			line-height: 1.95;
+		}
+
+		.education { background: var(--cream); }
+
+		.education .section-grid { align-items: start; }
+
+		.education-list { border-top: 1px solid var(--line); }
+
+		.education-item {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			gap: 24px;
+			padding: 24px 0;
+			border-bottom: 1px solid var(--line);
+		}
+
+		.education-item h3 {
+			margin: 0;
+			font-size: 15px;
+			font-weight: 700;
+			line-height: 1.6;
+		}
+
+		.education-item p {
+			margin: 5px 0 0;
+			color: var(--muted);
+			font-size: 13px;
+			line-height: 1.65;
+		}
+
+		.education-item time {
+			padding-top: 3px;
+			color: var(--olive);
+			font-size: 11px;
+			font-weight: 700;
+			white-space: nowrap;
+		}
+
+		.focus { background: var(--paper); }
+
+		.focus-list {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			margin-top: 38px;
+			border-top: 1px solid var(--line);
+			border-bottom: 1px solid var(--line);
+		}
+
+		.focus-item {
+			min-height: 138px;
+			padding: 23px 22px 23px 0;
+		}
+
+		.focus-item + .focus-item {
+			padding-left: 22px;
+			border-left: 1px solid var(--line);
+		}
+
+		.focus-item span {
+			color: var(--clay);
+			font-family: var(--serif);
+			font-size: 21px;
+		}
+
+		.focus-item h3 {
+			margin: 14px 0 0;
+			font-size: 13px;
+			font-weight: 600;
+			line-height: 1.65;
+		}
+
+		footer {
+			padding: 29px 0;
+			background: var(--cocoa);
+			color: rgba(243, 238, 230, .72);
+		}
+
+		.footer-inner {
+			display: flex;
+			justify-content: space-between;
+			gap: 20px;
+			font-size: 11px;
+		}
+
+		.footer-inner p { margin: 0; }
+		.footer-inner strong { color: var(--cream); font-weight: 600; }
+
+		@media (max-width: 760px) {
+			.topbar, .hero-inner, .section-inner, .footer-inner { width: min(100% - 40px, 560px); }
+			.topbar { min-height: 76px; }
+			.nav { gap: 18px; font-size: 11px; }
+			.hero { min-height: unset; }
+			.hero-inner {
+				min-height: unset;
+				grid-template-columns: 1fr;
+				gap: 43px;
+				padding-block: 72px 62px;
+			}
+			h1 { max-width: 550px; font-size: clamp(48px, 10vw, 68px); }
+			.origin { min-height: 275px; }
+			.section { padding: 76px 0; }
+			.section-grid { grid-template-columns: 1fr; gap: 31px; }
+			.section h2 { font-size: 37px; }
+		}
+
+		@media (max-width: 480px) {
+			.topbar, .hero-inner, .section-inner, .footer-inner { width: calc(100% - 36px); }
+			.nav { gap: 13px; font-size: 10px; }
+			.nav a:last-child { display: none; }
+			.hero-inner { padding-top: 59px; }
+			.intro { font-size: 14px; }
+			.education-item { grid-template-columns: 1fr; gap: 8px; }
+			.education-item time { grid-row: 1; }
+			.focus-list { grid-template-columns: 1fr; }
+			.focus-item, .focus-item + .focus-item {
+				min-height: unset;
+				padding: 19px 0;
+				border-left: 0;
+			}
+			.focus-item + .focus-item { border-top: 1px solid var(--line); }
+			.focus-item h3 { margin-top: 8px; }
+			.footer-inner { flex-direction: column; gap: 8px; }
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+		}
+	</style>
+</head>
+<body>
+	<header class="hero" id="inicio">
+		<div class="topbar">
+			<a class="wordmark" href="#inicio" aria-label="Marta Cortés, inicio">M<span>.</span>Cortés</a>
+			<nav class="nav" aria-label="Navegación principal">
+				<a href="#perfil">Perfil</a>
+				<a href="#formacion">Formación</a>
+				<a href="#intereses">Intereses</a>
+			</nav>
+		</div>
+		<div class="hero-inner">
+			<div>
+				<p class="eyebrow">Data Science · Información digital</p>
+				<h1>Datos con contexto.<br><em>Información</em> con propósito.</h1>
+				<p class="intro">Soy Marta Cortés, estudiante de máster en Data Science y graduada en Gestión de la Información y Contenidos Digitales. Me interesa transformar información compleja en conocimiento claro, útil y bien contado.</p>
+				<a class="hero-link" href="#perfil">Descubre mi perfil <span aria-hidden="true">↓</span></a>
+			</div>
+			<aside class="origin" aria-label="Lugar de origen: Motril, Granada">
+				<div class="origin-top">
+					<p class="micro-label">Un punto de partida</p>
+					<h2>Mirada amplia,<br>raíces del sur.</h2>
+				</div>
+				<div class="origin-bottom">
+					<div>
+						<p class="origin-place">Motril</p>
+						<p class="origin-region">Granada · Andalucía</p>
+					</div>
+					<p class="origin-number" aria-hidden="true">01</p>
+				</div>
+			</aside>
+		</div>
+	</header>
+
+	<main>
+		<section class="section about" id="perfil">
+			<div class="section-inner section-grid">
+				<div>
+					<p class="section-index">01 / Perfil</p>
+					<p class="section-label">Sobre mí</p>
+				</div>
+				<div>
+					<h2>Entre la información<br>y la ciencia de datos.</h2>
+					<p class="about-copy">Mi formación combina la gestión de la información y los contenidos digitales con mi actual especialización en Data Science. Esa perspectiva me permite acercarme a los datos pensando tanto en cómo analizarlos como en cómo darles estructura, contexto y sentido. Disfruto aprendiendo, haciendo buenas preguntas y encontrando formas claras de comunicar lo que los datos revelan.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section education" id="formacion">
+			<div class="section-inner section-grid">
+				<div>
+					<p class="section-index">02 / Formación</p>
+					<p class="section-label">Recorrido académico</p>
+				</div>
+				<div>
+					<h2>Aprender para conectar ideas.</h2>
+					<div class="education-list">
+						<article class="education-item">
+							<div>
+								<h3>Máster en Data Science</h3>
+								<p>Formación actual en análisis de datos y métodos cuantitativos.</p>
+							</div>
+							<time>En curso</time>
+						</article>
+						<article class="education-item">
+							<div>
+								<h3>Grado en Gestión de la Información y Contenidos Digitales</h3>
+								<p>Universidad Carlos III de Madrid</p>
+							</div>
+							<time>Graduada</time>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section focus" id="intereses">
+			<div class="section-inner">
+				<p class="section-index">03 / Intereses</p>
+				<h2>Lo que me mueve.</h2>
+				<div class="focus-list">
+					<article class="focus-item">
+						<span aria-hidden="true">A</span>
+						<h3>Análisis y exploración de datos</h3>
+					</article>
+					<article class="focus-item">
+						<span aria-hidden="true">B</span>
+						<h3>Gestión de información y contenidos digitales</h3>
+					</article>
+					<article class="focus-item">
+						<span aria-hidden="true">C</span>
+						<h3>Comunicación clara de ideas complejas</h3>
+					</article>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="footer-inner">
+			<p><strong>Marta Cortés</strong> · Data Science</p>
+			<p>Motril, Granada · Andalucía</p>
+		</div>
+	</footer>
+</body>
+</html>
